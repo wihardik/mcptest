@@ -25,4 +25,4 @@ export async function getAllMessages(params: GetAllMessagesParams) {
  
 }
 
-export default { getAllMessages };
+const api = { getAllMessages }; export default api;
