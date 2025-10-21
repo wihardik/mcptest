@@ -35,4 +35,5 @@ export async function replyToThread(params: ReplyToThreadParams) {
   return safePost("/nodes/google/execute", payload);
 }
 
-export default { replyToThread };
+const api = { replyToThread }; export default api;
+
