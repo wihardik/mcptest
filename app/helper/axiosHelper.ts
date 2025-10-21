@@ -29,3 +29,4 @@ export async function safePost<T = any>(path: string, payload: any) {
     throw err;
   }
 }
+
