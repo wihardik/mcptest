@@ -1,4 +1,4 @@
-import { safePost } from "../../../helper/axiosHelper";
+import { safePost } from "../../helper/axiosHelper";
 
 /** Parameters for replyToThread */
 export type ReplyToThreadParams = {
