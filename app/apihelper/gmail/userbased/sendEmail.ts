@@ -1,6 +1,8 @@
 // lib/googleApi.ts
 
-import { safePost } from "../../helper/axiosHelper";
+import { safePost } from "@/app/helper/axiosHelper";
+
+
 
 export type SendEmailParams = {
   to: string;

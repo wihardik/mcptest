@@ -1,4 +1,4 @@
-import { safePost } from "../../helper/axiosHelper";
+import { safePost } from "../../../helper/axiosHelper";
 
 // ------------------ GET ALL MESSAGES ------------------
 export type GetAllMessagesParams = {
