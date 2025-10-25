@@ -18,7 +18,7 @@ export default function AboutMe() {
         {/* Profile Section */}
         <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-12">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
-            Hello, I'm John Doe
+            Hello, I&apos;m John Doe
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
@@ -117,6 +117,7 @@ export default function AboutMe() {
     </div>
   );
 }
+
 
 
 
