@@ -23,8 +23,8 @@ export default function AboutMe() {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                I'm a passionate developer and poetry enthusiast who believes in the power of words 
-                to inspire and connect people. When I'm not coding, you'll find me exploring the 
+                I&apos;m a passionate developer and poetry enthusiast who believes in the power of words 
+                to inspire and connect people. When I&apos;m not coding, you&apos;ll find me exploring the 
                 beauty of language through verse.
               </p>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -117,4 +117,5 @@ export default function AboutMe() {
     </div>
   );
 }
+
 
