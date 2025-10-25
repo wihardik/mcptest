@@ -61,7 +61,7 @@ export default function AboutMe() {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border-l-4 border-blue-500">
               <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-6 text-center italic">
-                "The Road Not Taken"
+                &ldquo;The Road Not Taken&rdquo;
               </h3>
               <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
                 <p className="italic">
@@ -117,5 +117,6 @@ export default function AboutMe() {
     </div>
   );
 }
+
 
 
