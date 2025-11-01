@@ -1,22 +1,22 @@
-import axios, { AxiosInstance } from "axios";
+import axios, { AxiosInstance } from 'axios';
 
-const BASE_URL = process.env.GOOGLE_INTEGRATION_URL || "http://localhost:8003";
+const BASE_URL = process.env.GOOGLE_INTEGRATION_URL || 'http://localhost:8003';
 
 // create a shared axios instance
 export const api: AxiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
   timeout: 15_000,
 });
 
 // ---------------- SAFE POST ----------------
-export async function safePost<T = any>(path: string, payload: any) {
+export async function safePost<T = unknown>(path: string, payload?: unknown): Promise<T> {
   try {
-    const { data } = await api.post<T>(path, payload);
+    const { data } = await api.post<T>(path, payload as unknown as Record<string, unknown>);
     return data;
-  } catch (err) {
+  } catch (err: unknown) {
     if (axios.isAxiosError(err)) {
       throw {
         message: err.message,
@@ -29,11 +29,11 @@ export async function safePost<T = any>(path: string, payload: any) {
 }
 
 // ---------------- SAFE GET ----------------
-export async function safeGet<T = any>(path: string, params?: Record<string, any>) {
+export async function safeGet<T = unknown>(path: string, params?: Record<string, unknown>): Promise<T> {
   try {
     const { data } = await api.get<T>(path, { params });
     return data;
-  } catch (err) {
+  } catch (err: unknown) {
     if (axios.isAxiosError(err)) {
       throw {
         message: err.message,
