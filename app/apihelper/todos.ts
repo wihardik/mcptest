@@ -1,4 +1,4 @@
-type Todo = {
+export type Todo = {
   id: string;
   title: string;
   completed: boolean;
@@ -8,15 +8,15 @@ type Todo = {
 // In-memory store (server process memory)
 const todos: Todo[] = [];
 
+type CryptoWithUUID = { randomUUID?: () => string };
+
 function generateId(): string {
   try {
-    // prefer crypto.randomUUID when available
-    // @ts-ignore
-    if (globalThis?.crypto && typeof (globalThis.crypto as any).randomUUID === "function") {
-      // @ts-ignore
-      return (globalThis.crypto as any).randomUUID();
+    const cryptoObj = (globalThis as unknown as { crypto?: CryptoWithUUID })?.crypto;
+    if (cryptoObj && typeof cryptoObj.randomUUID === 'function') {
+      return cryptoObj.randomUUID();
     }
-  } catch (e) {
+  } catch {
     // ignore
   }
   return Date.now().toString();
@@ -30,7 +30,7 @@ export async function createTodo(payload: { title: string; completed?: boolean }
   const todo: Todo = {
     id: generateId(),
     title: payload.title.trim(),
-    completed: typeof payload.completed === "boolean" ? payload.completed : false,
+    completed: typeof payload.completed === 'boolean' ? payload.completed : false,
     createdAt: new Date().toISOString(),
   };
   todos.push(todo);
