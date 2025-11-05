@@ -52,4 +52,3 @@ export const rows: { title: string; items: MediaItem[] }[] = [
   },
 ];
 
-export default null;
