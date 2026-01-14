@@ -24,3 +24,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+:root{
+  --netflix-bg: #141414;
+  --netflix-red: #E50914;
+  --netflix-secondary: #B3B3B3;
+}
+
+.netflix-bg{background:var(--netflix-bg)}
+
